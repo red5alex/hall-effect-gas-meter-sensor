@@ -1,15 +1,21 @@
 # HallEffectGasMeter
 
+**work in progress!
+these are my notes while working on this project, come back later when everything is tested!**
+
 Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing.
 
 # Hardware used
 
-- hall effect sensor 4913B TLE4913
+- hall effect sensor 4913B TLE4913 (49E)
 - ESP32 or ESP8266
 - 3 Dupont wires
 - some kind of server to send MQTT messages to (e.g. node-red, home-assistant...)
 
 Note: I tried a classic mechanical Reed sensor with this setup to no avail. Changing to a digital sensor with inbuilt hysteresis made the difference
+
+The hall effect sensor is latching, meaning that it shifts between a HIGH and a LOW state.
+The states do depend on the reference voltage of the ESP, so they are different if the board is powered using 3.3V input or 5V (USB).
 
 # Checking the gasmeter
 
@@ -27,6 +33,7 @@ The CAD model is made using OnShape and can be seen [here](https://cad.onshape.c
 If you do not have a 3D printer, play dough will do just fine :)
 
 # The Ardunio Sketch
+
 
 
 
