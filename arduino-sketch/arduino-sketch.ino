@@ -1,8 +1,7 @@
 /*
   Sketch for reading a Hall Latch Sensor
 
-  TODO:
-  - MQTT communication
+  If this does not perform, these are ideas to improve:
   - Add voltage divider to board for larger input range of sensor
   - add hysteresis in this script as additional noise filter
   - only trigger if there was no state change for n seconds.
@@ -21,10 +20,9 @@
 #include "are_mqtt.h"
 
 // pin definition
-const int analogInPin = 4;  // Connect to Signal pin of 4913B TLE4913 Hall Effect Sensor
-const int LedPin = 2;  // Analog input pin that the potentiometer is attached to
+const int analogInPin = 34;  // Connect to Signal pin of 4913B TLE4913 Hall Effect Sensor
+const int LedPin = GPIO_LED;  // Analog input pin that the potentiometer is attached to
 const int threshold = 4094;  // this is for 5V Power Supply
-
 
 // variables
 long lastMsg = 0; // time counter for MQTT intervalls
@@ -94,6 +92,9 @@ void setup() {
   mqttclient.setServer(MQTT_SERVER, MQTT_PORT);
   mqttclient.setCallback(callback);
 
+  Serial.print("MQTT topic for publishing: ");
+  Serial.println(TOPIC_SENSOR_HALL);
+
 }
 
 void loop() {
@@ -107,8 +108,8 @@ void loop() {
 
   // read analog value:
   sensorValue = analogRead(analogInPin);
-  Serial.print(sensorValue);
-  Serial.println("\n");
+  //Serial.print(sensorValue);
+  //Serial.println("\n");
 
   if (sensorValue > threshold)
     sensor_high = true;
@@ -168,8 +169,10 @@ void loop() {
 
     // Convert sensor reading from float to a char array
     char tempString[8];  // increase array length if having runtime errors
-    dtostrf(counter, 1, 2, tempString);
-    Serial.print("sending mqtt payload: ");
+    dtostrf(counter, 1, 0, tempString);
+    Serial.print("mqtt ");
+    Serial.print(TOPIC_SENSOR_HALL);
+    Serial.print(": ");
     Serial.print(tempString);
     Serial.println("\n");
     mqttclient.publish(TOPIC_SENSOR_HALL, tempString);

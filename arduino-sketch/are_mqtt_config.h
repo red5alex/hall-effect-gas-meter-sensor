@@ -32,5 +32,5 @@
  *  Sensors readings are send at an intervall, given below as milliseconds.
  */
 
-#define MQTT_UPDATE_INTERVALL 15000  // milliseconds after which new sensor values are send
+#define MQTT_UPDATE_INTERVALL 300000  // milliseconds after which new sensor values are send
 #define TOPIC_SENSOR_HALL  "red5alex/gasmeter/sensor/counter"  // publish the current counter value
