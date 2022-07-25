@@ -42,7 +42,7 @@ Connect the other end of the dupont cable with the following terminals of the ES
 
 You can choose another GPIO with ADC capability (see pinout of you DevBoard). Note: On ESP32, you cannot use the pins connected to ADC2, as this will conflict with the use of WiFi.
 
-<img src="figs/fritzing-export.jpg" alt="wiring schematics">
+<img src="figs/fritzing-export.png" alt="wiring schematics">
 
 # The Ardunio Sketch
 
