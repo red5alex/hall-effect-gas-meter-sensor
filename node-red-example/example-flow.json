@@ -1,0 +1,95 @@
+[
+    {
+        "id": "aa8e4dcac24e9eba",
+        "type": "mqtt in",
+        "z": "f4b20db02bb27a8b",
+        "name": "",
+        "topic": "red5alex/gasmeter/sensor/counter/#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "3bb3e4ac13d72952",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 460,
+        "y": 800,
+        "wires": [
+            [
+                "78f7c21c323ccf7f"
+            ]
+        ]
+    },
+    {
+        "id": "78f7c21c323ccf7f",
+        "type": "function",
+        "z": "f4b20db02bb27a8b",
+        "name": "",
+        "func": "vol_per_pulse = 0.1\n\nmsg.counter = parseInt(msg.payload)\nmsg.payload = msg.counter * vol_per_pulse\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 800,
+        "wires": [
+            [
+                "0473cfb084c51105"
+            ]
+        ]
+    },
+    {
+        "id": "0473cfb084c51105",
+        "type": "debug",
+        "z": "f4b20db02bb27a8b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "89acaecf776970d7",
+        "type": "comment",
+        "z": "f4b20db02bb27a8b",
+        "name": "gasmeter",
+        "info": "",
+        "x": 300,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "3bb3e4ac13d72952",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
