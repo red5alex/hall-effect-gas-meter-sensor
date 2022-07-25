@@ -61,7 +61,7 @@ Place a magnet close to the sensor and check if it will turn off. If not, you ma
 
 # 3D printed case for MicrController
 
-I used the (ESP32 Open MQTT gateway box)[https://www.thingiverse.com/thing:5345637] by (Simedru Florin)[https://https://www.thingiverse.com/simedruflorin] as an enclosure for my ESP32 DevKit (Checkout his designs if using other boards, e.g. ESP8266).
+I used the [ESP32 Open MQTT gateway box](https://www.thingiverse.com/thing:5345637) by [Simedru Florin](https://https://www.thingiverse.com/simedruflorin) as an enclosure for my ESP32 DevKit (Checkout his designs if using other boards, e.g. ESP8266).
 
 The Dupont cables can be routed through its openings and secured with hotglue. Below a picture of the final assembly:
 
