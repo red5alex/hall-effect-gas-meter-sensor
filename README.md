@@ -10,10 +10,10 @@ Building a device for reading the pulse count of a gas meter using a hall effect
 
 ## Hardware used
 
-- hall effect sensor 4913B TLE4913 (49E)
-- ESP32 or ESP8266
-- 3 Dupont wires (female-female)
-- some kind of server to send MQTT messages to (e.g. node-red, home-assistant...)
+- **hall effect sensor 4913B TLE4913 (49E)**
+- **ESP32** (ESP8266 or any WiFi-enabled, Arduino-compatible board should do)
+- **3 Dupont wires** (female-female)
+- some kind of server to send MQTT messages to (e.g. **node-red**, **home-assistant**...)
 
 This hall effect sensor is latching, meaning that it shifts between a HIGH and a LOW state.
 The states do depend on the reference voltage of the ESP, so they are different if the board is powered using 3.3V input or 5V (USB).
@@ -28,9 +28,9 @@ One of the dials contains a magnet.
 I was able to figure out which one it is by moving a strong magnet in the vicinity which caused the relevant one to wiggle a little bit.
 The sensor must be place close to this roller.
 
-## 3D printed sensor holder
+## 3D printed case for the sensor
 
-To hold the sensor in place, I have created a printable piece of plastic that press-fits into the slot above the holder and holds the sensor and cable firmly in place: 
+To hold the sensor in place, I have created a printable piece of plastic that press-fits into the slot above the holder and holds the sensor and cable firmly in place. Find the 3D print files here: https://www.printables.com/model/247665-hall-effekt-gas-meter-reader
 
 The CAD model was made in OnShape and can be found [here]([https://www.google.com](https://cad.onshape.com/documents/e0d259fd877c1182a09bbc17/w/994389497a324f97073d213b/e/8d6a3ead179d19c52f29340c?renderMode=0&uiState=62d9d468549a2247567e7bfb) "OnShape")
 
@@ -38,9 +38,9 @@ If you do not have a 3D printer, play dough should do just fine :)
 
 After printing, the sensor slides into the little notch. Now, attach the dupont cables to its the sensor's terminals and presse them into the little grove (You can secure them with superglue or double sided tape, but it worked fine for me without an issue). I replaces the three single dupont shells with a triple one, which makes handling a bit easier.
 
-<img src="figs/sensor-mount.png" alt="slide the sensor in the notch">
-
 <img src="figs/sensor-mount-cable.png" alt="attach the cables and push in grove">
+
+<img src="figs/sensor-mount.png" alt="slide the sensor in the notch">
 
 The whole assembly now slides into the slot above the digit rollers. I have used a pen to highliht the indicator on the side of the mount, which 
 should be placed directly above the roller containing the magnet.\
@@ -59,7 +59,7 @@ You can choose another GPIO with ADC capability (see pinout of you DevBoard). No
 
 <img src="figs/fritzing-export.png" alt="wiring schematics">
 
-# The Ardunio Sketch
+## The Ardunio Sketch
 
 The arduino sketch in the repository contains several configuration files.
 
@@ -74,7 +74,7 @@ After that, the status LED will be on if the sensor is connected but not detecti
 
 Place a magnet close to the sensor and check if it will turn off. If not, you may need to adjust the threshold voltage in the code (it differs e.g. if powering the ESP32 board via a 5V supply (USB) or a 3.3V supply)
 
-# 3D printed case for MicrController
+## 3D printed case for MicroController
 
 I used the [ESP32 Open MQTT gateway box](https://www.thingiverse.com/thing:5345637) by [Simedru Florin](https://https://www.thingiverse.com/simedruflorin) as an enclosure for my ESP32 DevKit (Checkout his designs if using other boards, e.g. ESP8266).
 
@@ -83,7 +83,7 @@ The Dupont cables can be routed through its openings and secured with hotglue. B
 <img src="figs/mounted.png" alt="picture of the sensor mounted to the gasmeter">
 
 
-# Example Application with Node-RED
+## Example Application with Node-RED
 
 The repository contains a minimal appliacation example, where the ESP32 sends the current count via an MQTT broker to node-red.
 
