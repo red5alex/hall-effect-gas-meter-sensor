@@ -26,7 +26,7 @@ The sensor must be place close to this roller.
 
 To hold the sensor in place, I have created a printable piece of plastic that press-fits into the slot above the holder and holds the sensor and cable firmly in place: 
 
-The CAD model is made using OnShape and can be seen [here](https://cad.onshape.com/documents/e0d259fd877c1182a09bbc17/w/994389497a324f97073d213b/e/8d6a3ead179d19c52f29340c?renderMode=0&uiState=62d9d468549a2247567e7bfb).
+The CAD model was made in OnShape and can be found [here]([https://www.google.com](https://cad.onshape.com/documents/e0d259fd877c1182a09bbc17/w/994389497a324f97073d213b/e/8d6a3ead179d19c52f29340c?renderMode=0&uiState=62d9d468549a2247567e7bfb) "OnShape")
 
 If you do not have a 3D printer, play dough should do just fine :)
 
@@ -72,7 +72,7 @@ The Dupont cables can be routed through its openings and secured with hotglue. B
 
 The repository contains a minimal appliacation example, where the ESP32 sends the current count via an MQTT broker to node-red.
 
-<img src="figs/mounted.png" alt="example nodes in node-red GUI">
+<img src="figs/node-red-example.png" alt="example nodes in node-red GUI">
 
 
 
