@@ -4,10 +4,13 @@ Building a device for reading the pulse count of a gas meter using a hall effect
 
 ## Hardware used
 
-- hall effect sensor 4913B TLE4913
+- hall effect sensor 4913B TLE4913 (49E)
 - ESP32 or ESP8266
 - 3 Dupont wires (female-female)
 - some kind of server to send MQTT messages to (e.g. node-red, home-assistant...)
+
+This hall effect sensor is latching, meaning that it shifts between a HIGH and a LOW state.
+The states do depend on the reference voltage of the ESP, so they are different if the board is powered using 3.3V input or 5V (USB).
 
 Note: I tried a classic mechanical Reed sensor with this setup to no avail. Changing to a digital sensor with inbuilt hysteresis made the difference
 
@@ -70,6 +73,7 @@ The Dupont cables can be routed through its openings and secured with hotglue. B
 The repository contains a minimal appliacation example, where the ESP32 sends the current count via an MQTT broker to node-red.
 
 <img src="figs/mounted.jpg" alt="example nodes in node-red GUI">
+
 
 
 
