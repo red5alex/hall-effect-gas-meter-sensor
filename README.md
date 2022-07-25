@@ -1,6 +1,12 @@
 # HallEffectGasMeter
 
+**Reading a Gas Meter with Magnetic Encoder using a Hall Effect sensor and an ESP32**
+
 Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing.
+
+**WORK IN PROGRESS - Because it is summer time, my gas heater is off though I cannot test the assembly before later this year**
+
+<img src="figs/mounted.png" alt="picture of the sensor mounted to the gasmeter">
 
 ## Hardware used
 
@@ -31,6 +37,15 @@ The CAD model was made in OnShape and can be found [here]([https://www.google.co
 If you do not have a 3D printer, play dough should do just fine :)
 
 After printing, the sensor slides into the little notch. Now, attach the dupont cables to its the sensor's terminals and presse them into the little grove (You can secure them with superglue or double sided tape, but it worked fine for me without an issue). I replaces the three single dupont shells with a triple one, which makes handling a bit easier.
+
+<img src="figs/sensor-mount.png" alt="slide the sensor in the notch">
+
+<img src="figs/sensor-mount-cable.png" alt="attach the cables and push in grove">
+
+The whole assembly now slides into the slot above the digit rollers. I have used a pen to highliht the indicator on the side of the mount, which 
+should be placed directly above the roller containing the magnet.\
+
+<img src="figs/sensor-meter.png" alt="slide the assembly into the slot above the meter digit rollers">
 
 ## Wiring
 
