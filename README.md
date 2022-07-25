@@ -65,14 +65,14 @@ I used the (ESP32 Open MQTT gateway box)[https://www.thingiverse.com/thing:53456
 
 The Dupont cables can be routed through its openings and secured with hotglue. Below a picture of the final assembly:
 
-<img src="figs/mounted.jpg" alt="picture of the sensor mounted to the gasmeter">
+<img src="figs/mounted.png" alt="picture of the sensor mounted to the gasmeter">
 
 
 # Example Application with Node-RED
 
 The repository contains a minimal appliacation example, where the ESP32 sends the current count via an MQTT broker to node-red.
 
-<img src="figs/mounted.jpg" alt="example nodes in node-red GUI">
+<img src="figs/mounted.png" alt="example nodes in node-red GUI">
 
 
 
