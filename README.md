@@ -2,10 +2,9 @@
 
 **Reading a Gas Meter with Magnetic Encoder using a Hall Effect sensor and an ESP32**
 
-Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing. I tried it over one winter and it worked almost perfekt (lost about 1% of the pulses).
+Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing. I tried it over one winter and it worked almost perfekt (lost about 1% of the pulses). **It was, however, necessary to solder the wires instead of using the DuPont connectors shown in the pictures below.**
 
-**Note**: Besides using the magnetic counter, the Actaris G4 RF1 also features a mirror surface on the .001-wheel, allowing for optic reading with 10-fold resolution. I realized this only when I already had completed the build, and would have probably gone that way if I would have been aware of it earlier.
-Check out this project https://github.com/geertmeersman/energie-meter as a possibly better approach.
+**Note**: Besides using the magnetic counter, the Actaris G4 RF1 also features a reflective encoder on the .001-wheel, allowing for optic reading with 10-fold resolution than the magnetic encoder on the .01 wheel. I realized this only when I already had completed the build, and would have probably gone that way if I would have been aware of it earlier. I recommend to check out Geert Meersman's project https://github.com/geertmeersman/energie-meter which uses this approach.
 
 <img src="figs/mounted.png" alt="picture of the sensor mounted to the gasmeter">
 
@@ -25,8 +24,7 @@ Note: I tried a classic mechanical Reed sensor with this setup to no avail. Chan
 
 My gasmeter is an Actaris G4 RF1, however I am positive this setup can read-out any other meter with a magnetic pulse.
 
-One of the rollers contains a magnet. I was able to figure out which one it is by moving a strong magnet in the vicinity which caused the relevant one to wiggle a little bit.
-The sensor must be placed close to this roller.
+One of the rollers contains a magnet encoder. I was able to figure out which one it is by moving a strong magnet in the vicinity which caused the relevant one to wiggle a little bit. The sensor must be placed close to this roller.
 
 ## 3D printed sensor holder
 
@@ -37,8 +35,8 @@ The CAD model (made in OnShape) can be found [here]([https://www.google.com](htt
 If you do not have a 3D printer, play dough should do just fine :)
 
 After printing, the sensor slides into the little notch. Now, attach the dupont cables to the sensor's terminals and press them into the little grove.
-On the picture, I replaced the three original single dupont shells with a triple one, which makes handling a bit easier. If you go with the original terminals,
-you can secure them by wrapping sticky tape around it.
+On the picture, I replaced the three original single dupont shells with a triple one, which makes handling a bit easier. If you go with the original terminals, you can secure them by wrapping sticky tape around it.
+**Note from future author**: I only got a stable connection when actually soldering the wires, the Dupont connectors created false readings from time to time.
 
 <img src="figs/sensor-mount-cable.png" alt="attach the cables and push in grove">
 
