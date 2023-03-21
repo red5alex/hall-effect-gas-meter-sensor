@@ -2,9 +2,10 @@
 
 **Reading a Gas Meter with Magnetic Encoder using a Hall Effect sensor and an ESP32**
 
-Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing.
+Building a device for reading the pulse count of a gas meter using a hall effect sensor, and sending the counter value to an MQTT broker for further processing. I tried it over one winter and it worked almost perfekt (lost about 1% of the pulses).
 
-**WORK IN PROGRESS - Because it is summer time, my gas heater is off though I cannot test the assembly before later this year**
+**Note**: Besides using the magnetic counter, the Actaris G4 RF1 also features a mirror surface on the .001-wheel, allowing for optic reading with 10-fold resolution. I realized this only when I already had completed the build, and would have probably gone that way if I would have been aware of it earlier.
+Check out this project https://github.com/geertmeersman/energie-meter as a possibly better approach.
 
 <img src="figs/mounted.png" alt="picture of the sensor mounted to the gasmeter">
 
